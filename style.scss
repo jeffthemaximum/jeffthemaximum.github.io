@@ -283,6 +283,20 @@ footer {
   text-align: center;
 }
 
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  figcaption {
+    font-size: 80%;
+  }
+
+  img {
+    max-width: 50%;
+  }
+}
+
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
