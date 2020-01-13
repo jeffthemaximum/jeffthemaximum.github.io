@@ -88,7 +88,7 @@ And this will also print `hi`. `unless` is like `if not`.
 
 Let's trace a request through the POST `api/v1/user` endpoint to see how this works.
 
-- The first file that gets called is `routes.rb`. You can see the definition of POST `api/v1/user` [here]([https://github.com/jeffthemaximum/nyc_tour_backend/blob/51ebbbf50f919b16e95d38ce883ce66def03968d/config/routes.rb#L8](https://github.com/jeffthemaximum/nyc_tour_backend/blob/51ebbbf50f919b16e95d38ce883ce66def03968d/config/routes.rb#L8)). That syntax tells rails to call the `create` function in the `users_controller.rb` file.
+- The first file that gets called is `routes.rb`. You can see the definition of POST `api/v1/user` [here](https://github.com/jeffthemaximum/nyc_tour_backend/blob/51ebbbf50f919b16e95d38ce883ce66def03968d/config/routes.rb#L8). That syntax tells rails to call the `create` function in the `users_controller.rb` file.
 - That `create` function is then executed by Rails, which is [here](https://github.com/jeffthemaximum/nyc_tour_backend/blob/51ebbbf50f919b16e95d38ce883ce66def03968d/app/controllers/api/v1/users_controller.rb#L6-L14). The lifecycle methods that I mentioned above come into play here. and it's a little tricky, so I'll do my best to describe:
 	- You can see [here](https://github.com/jeffthemaximum/nyc_tour_backend/blob/51ebbbf50f919b16e95d38ce883ce66def03968d/app/controllers/api/v1/users_controller.rb#L4) we use `skip_before_action`.  That syntax says to not do the `before_action` of calling `verify_authorized` for the `create` controller.
 	- `before_action` and `skip_before_action` are built-in Rails controller lifecycle methods.
